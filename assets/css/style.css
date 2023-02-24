@@ -8,17 +8,17 @@ html {
 /* CSS */
 body {
     height: 1000px;
+   
 }
 
-
-
 #navigation-bar {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     height: 100%;
     font-size: 15px;
     overflow: hidden;
     position: fixed;
-    
+    width: 20rem;
+
 }
 
 #navigation-bar .main-nav-row {
@@ -41,6 +41,16 @@ body {
     padding-bottom: 7px;
     color: rgba(255, 255, 255, 0.6);
     font-weight: 500;
+}
+
+#navigation-bar .sub-nav-row {
+    height: 30%;
+    width: 100%;
+}
+
+#navigation-bar .play-lists {
+    height: 100%;
+    overflow: scroll;
 }
 
 #navigation-bar .play-lists .nav-item {
@@ -87,22 +97,21 @@ body {
 }
 
 /* PLAY BAR */
+
 #play-bar {
-    position: fixed;
+    position: sticky;
     width: 100%;
     height: 100px;
     bottom: 0;
     background-color: #000;
-    z-index: 3;
+    margin-left: 0;
 }
 
-#play-bar .play-btn {
+#play-bar .control-btn {
     color: #fff;
-
     line-height: 30px;
     font-size: 36px;
 }
-
-#play-bar .row {
-    width: 100%;
+#play-bar > .control-btn > div {
+    padding-top: 1rem;
 }
