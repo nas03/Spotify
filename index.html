@@ -103,9 +103,9 @@
         <div class="row second-row">
             <audio src="./assets/musics/golden-hour.mp3" id="player" ontimeupdate="document.getElementById('tracktime').innerHTML=
                         Math.floor(this.currentTime / 60)  + ' : ' +
-                        Math.floor(this.currentTime % 60) "></audio>
+                        formatNumber(Math.floor(this.currentTime % 60))  "></audio>
             <div class="seek-bar text-center">
-                <span id="tracktime">0 : 0</span>
+                <span id="tracktime">0 : 00</span>
                 <progress id="seekbar" value="0" max="0"></progress>
             </div>
         </div>
@@ -145,7 +145,11 @@
             $('#seekbar').attr("value", this.currentTime / this.duration);
 
         });
-
+        function formatNumber(number) {
+            var format = number.toString();
+            if (format.length > 1) return format;
+            return '0' + format;
+        }
     </script>
 </body>
 
