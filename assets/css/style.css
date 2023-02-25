@@ -142,6 +142,19 @@ body {
     margin-top: 0.5rem;
     width: 50rem;
     display: inline-block;
+
+}
+
+progress::-moz-progress-bar {
+    background: red;
+}
+
+progress::-webkit-progress-value {
+    background: red;
+}
+
+progress {
+    color: red;
 }
 
 #tracktime {
