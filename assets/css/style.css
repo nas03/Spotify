@@ -137,10 +137,17 @@ body {
     opacity: 0.7;
 }
 
+
 #seekbar {
     margin-top: 0.5rem;
-    left: 50%;
-    position: relative;
-    transform: translateX(-50%);
     width: 50rem;
+    display: inline-block;
+}
+
+#tracktime {
+    margin-top: 0.5rem;
+
+    width: 5rem;
+    display: inline-block;
+    color: white;
 }

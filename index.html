@@ -101,50 +101,51 @@
             </div>
         </div>
         <div class="row second-row">
-            <audio src="./assets/musics/golden-hour.mp3" id="player" ontimeupdate="document.getElementById('tracktime').innerHTML = Math.floor(this.currentTime) + ' / ' + Math.floor(this.duration);"></audio>
-            <span id="tracktime">0 / 0</span>
-            <progress id="seekbar" value="0" max="0"></progress>
-
-
-
+            <audio src="./assets/musics/golden-hour.mp3" id="player" ontimeupdate="document.getElementById('tracktime').innerHTML=
+                        Math.floor(this.currentTime / 60)  + ' : ' +
+                        Math.floor(this.currentTime % 60) "></audio>
+            <div class="seek-bar text-center">
+                <span id="tracktime">0 : 0</span>
+                <progress id="seekbar" value="0" max="0"></progress>
+            </div>
         </div>
+    </div>
     </div>
     <script>
         // SEEKBAR
-const playBtn = document.querySelector('.js-play-btn');
-var nowPlaying = false;
-function removePlayIcon() {
-    playBtn.classList.remove('bi-play-circle');
-    playBtn.classList.add('bi-pause-circle');
-}
-function playMusic() {
-    document.getElementById('player').play();
-    removePlayIcon();
-}
-function removePauseIcon() {
-    playBtn.classList.remove('bi-pause-circle');
-    playBtn.classList.add('bi-play-circle');
-}
-function pauseMusic() {
-    document.getElementById('player').pause();
-    removePauseIcon();
-}
-playBtn.addEventListener('click', function () {
-    if (!nowPlaying) {
-        playMusic();
-        nowPlaying = true;
-    } else {
-        pauseMusic();
-        nowPlaying = false;
-    }
-});
+        const playBtn = document.querySelector('.js-play-btn');
+        var nowPlaying = false;
+        function removePlayIcon() {
+            playBtn.classList.remove('bi-play-circle');
+            playBtn.classList.add('bi-pause-circle');
+        }
+        function playMusic() {
+            document.getElementById('player').play();
+            removePlayIcon();
+        }
+        function removePauseIcon() {
+            playBtn.classList.remove('bi-pause-circle');
+            playBtn.classList.add('bi-play-circle');
+        }
+        function pauseMusic() {
+            document.getElementById('player').pause();
+            removePauseIcon();
+        }
+        playBtn.addEventListener('click', function () {
+            if (!nowPlaying) {
+                playMusic();
+                nowPlaying = true;
+            } else {
+                pauseMusic();
+                nowPlaying = false;
+            }
+        });
 
-$('#player').on('timeupdate', function () {
-    $('#seekbar').attr("value", this.currentTime / this.duration);
+        $('#player').on('timeupdate', function () {
+            $('#seekbar').attr("value", this.currentTime / this.duration);
 
-});
+        });
 
-// 
     </script>
 </body>
 
