@@ -8,7 +8,7 @@ html {
 /* CSS */
 body {
     height: 1000px;
-   
+
 }
 
 #navigation-bar {
@@ -98,6 +98,7 @@ body {
 
 /* PLAY BAR */
 
+
 #play-bar {
     position: sticky;
     width: 100%;
@@ -107,11 +108,39 @@ body {
     margin-left: 0;
 }
 
+#play-bar .first-row {
+    height: 40%;
+}
+
+#play-bar .second-row {
+    height: 60%;
+}
+
 #play-bar .control-btn {
     color: #fff;
     line-height: 30px;
     font-size: 36px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
-#play-bar > .control-btn > div {
-    padding-top: 1rem;
+
+#play-bar>.control-btn>div {
+    padding-top: 1.5rem;
+}
+
+#play-bar .control-btn .button {
+    padding: 0 3px;
+}
+
+.control-btn .button:hover {
+    cursor: grab;
+    opacity: 0.7;
+}
+
+#seekbar {
+    margin-top: 0.5rem;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    width: 50rem;
 }
