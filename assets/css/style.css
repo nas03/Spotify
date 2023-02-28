@@ -97,10 +97,8 @@ body {
 }
 
 /* PLAY BAR */
-
-
 #play-bar {
-    position: sticky;
+    position: fixed;
     width: 100%;
     height: 100px;
     bottom: 0;
@@ -109,12 +107,13 @@ body {
 }
 
 #play-bar .first-row {
-    height: 40%;
+    height: 50%;
 }
 
 #play-bar .second-row {
-    height: 60%;
+    height: 50%;
 }
+
 
 #play-bar .control-btn {
     color: #fff;
@@ -123,43 +122,53 @@ body {
     padding-left: 5px;
     padding-right: 5px;
 }
-
-#play-bar>.control-btn>div {
-    padding-top: 1.5rem;
+#play-bar .first-row > div{
+    text-align: center ;
 }
 
-#play-bar .control-btn .button {
-    padding: 0 3px;
+#play-bar .first-row .button {
+    width: 10%;
+    box-sizing: border-box;
+    padding-left: 4px;
+    padding-right: 4px;
+   
 }
 
-.control-btn .button:hover {
-    cursor: grab;
-    opacity: 0.7;
+#play-bar .second-row {
+    line-height: 16px;
 }
 
 
 #seekbar {
     margin-top: 0.5rem;
-    width: 50rem;
+    width: 80%;
     display: inline-block;
-
-}
-
-progress::-moz-progress-bar {
-    background: red;
-}
-
-progress::-webkit-progress-value {
-    background: red;
-}
-
-progress {
-    color: red;
+    font-size: 14px;
 }
 
 #tracktime {
     margin-top: 0.5rem;
-    width: 5rem;
     display: inline-block;
     color: white;
+    font-size: 12px;
+}
+.adjust-btn {
+    position: relative;
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 30px;
+    top:50%;
+    
+}
+.adjust-btn i {
+    float: right;
+   
+}
+.volume-slider .slider {
+    width: 100px;
+    float: right;
+    font-size: 12px;
+    height: 5px;
 }

@@ -83,11 +83,11 @@
     </div>
 
     <div id="play-bar" class="row">
-        <div class="row first-row">
-            <div class="now-playing col-4">
-                jbjb
-            </div>
-            <div class="control-btn col-4 text-center">
+        <div class="now-playing col-4">
+            jbjb
+        </div>
+        <div class="control-btn col-4 ">
+            <div class="row first-row">
                 <div>
                     <i class="button bi-shuffle js-shuffle-btn"></i>
                     <i class="button bi-skip-start-btn js-to-prev-btn"></i>
@@ -96,21 +96,29 @@
                     <i class="button bi-repeat js-repeat-btn"></i>
                 </div>
             </div>
-            <div class="adjust-btn col-4">
-                huh
+            <div class="row second-row text-center">
+                <audio src="./assets/musics/golden-hour.mp3" id="player" ontimeupdate="document.getElementById('tracktime').innerHTML=
+                                Math.floor(this.currentTime / 60)  + ' : ' +
+                                formatNumber(Math.floor(this.currentTime % 60))  "></audio>
+                <div class="seek-bar">
+                    <span id="tracktime">0 : 00</span>
+                    <progress id="seekbar" value="0" max="1"></progress>
+                </div>
             </div>
         </div>
-        <div class="row second-row">
-            <audio src="./assets/musics/golden-hour.mp3" id="player" ontimeupdate="document.getElementById('tracktime').innerHTML=
-                        Math.floor(this.currentTime / 60)  + ' : ' +
-                        formatNumber(Math.floor(this.currentTime % 60))  "></audio>
-            <div class="seek-bar text-center">
-                <span id="tracktime">0 : 00</span>
-                <progress id="seekbar" value="0" max="1"></progress>
+        <div class="col-4">
+            <div class="adjust-btn">
+                <i class="bi-arrows-angle-expand button"></i>
+                <div class="volume-slider">
+                    <input type="range" min="1" max="100" title="" value="50" class="slider" id="myRange">
+                    <i class="bi-volume-up button"></i>
+                </div>
+                <i class="bi-music-note-list button"></i>
+                <i class="bi-mic button"></i>
             </div>
         </div>
     </div>
-    </div>
+
     <script>
         // SEEKBAR
         const playBtn = document.querySelector('.js-play-btn');
